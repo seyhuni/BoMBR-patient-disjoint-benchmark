@@ -1,0 +1,76 @@
+project:
+  seed: 20260812
+  output_dir: outputs
+  times_new_roman: true
+
+data:
+  root: data/raw/Myelofibrozis_PNG
+  metadata_file: master_metadata.csv
+  image_size: 512
+  num_classes: 4
+  class_names: [Bone, Fat, Cell, Reticulin]
+  # Ham maskeler single-channel sınıf indeksi taşır: 0=Bone, 1=Fat, 2=Cell, 3=Reticulin.
+  mask_encoding: indexed
+  train_split_name: train
+  test_split_name: test
+
+split:
+  # original_if_disjoint: Orijinal train/test hasta olarak ayrık ise korur;
+  # değilse tüm veride group-holdout stratejisine geçer.
+  strategy: original_if_disjoint
+  test_size: 0.20
+  val_size_within_train: 0.20
+  candidate_splits: 2000
+  random_state: 20260812
+  group_column: patient
+  target_column: mf_grade
+
+segmentation:
+  model: unet_resnet34
+  pretrained: true
+  epochs: 100
+  batch_size: 8
+  num_workers: 4
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  patience: 20
+  amp: true
+  class_weights: [0.8, 1.0, 0.7, 2.2]
+  loss_weights:
+    cross_entropy: 0.40
+    dice: 0.40
+    focal: 0.20
+  augmentation:
+    horizontal_flip_p: 0.5
+    vertical_flip_p: 0.5
+    rotate_limit: 90
+    elastic_p: 0.20
+    color_jitter_p: 0.50
+    blur_p: 0.15
+    brightness_contrast_p: 0.30
+
+grading:
+  image_size: 384
+  cnn_backbone: resnet50
+  cnn_epochs: 80
+  batch_size: 16
+  num_workers: 4
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  patience: 15
+  amp: true
+  fusion:
+    pca_components: 0.95
+    svm_c_grid: [0.1, 1.0, 10.0, 100.0]
+    svm_gamma_grid: [scale, 0.01, 0.001]
+    cv_folds: 4
+
+reporting:
+  figure_dpi: 300
+  font_family: Times New Roman
+  font_size: 9
+  palette:
+    red: '#8B0000'
+    light_red: '#E8B4B8'
+    near_white: '#FAFAFA'
+    gray: '#4D4D4D'

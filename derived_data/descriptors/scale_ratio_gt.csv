@@ -1,0 +1,13 @@
+feature,gt,gt_legacyscale
+pct_bone,2.0,1.7
+pct_cell,0.55,0.56
+pct_fat,2.06,1.97
+pct_reticulin,0.5,0.52
+ret_cell_fraction,0.85,0.85
+ret_component_density,1.32,0.5
+ret_elongation_sd,1.1,1.04
+ret_fractal_dim,0.96,0.91
+ret_lacunarity,1.39,1.75
+ret_mean_component_area,0.39,1.02
+ret_mean_perimeter,0.46,0.81
+ret_median_elongation,1.11,0.99

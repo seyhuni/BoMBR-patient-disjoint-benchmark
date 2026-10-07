@@ -1,0 +1,14 @@
+[
+["pct_reticulin","Reticulin area fraction","Fraction of field pixels labelled reticulin","N_ret / N","–","0","fraction"],
+["pct_fat","Fat area fraction","Fraction of pixels labelled fat (adipocytes, empty spaces)","N_fat / N","–","0","fraction"],
+["pct_cell","Cellular area fraction","Fraction of pixels labelled cellular (haematopoietic) marrow","N_cell / N","–","0","fraction"],
+["pct_bone","Bone area fraction","Fraction of pixels labelled trabecular bone","N_bone / N","–","0","fraction"],
+["ret_component_density","Reticulin component density","Number of separate reticulin pieces per unit area; many small pieces indicate a fragmented network","n_comp / (N / 10^6)","8","0","components per megapixel"],
+["ret_mean_component_area","Mean component area","Average size of a connected reticulin piece; large values indicate a confluent network","mean(A_i)","8","0","pixels²"],
+["ret_median_elongation","Median elongation","How thread-like the reticulin pieces typically are (1 = round)","median(L_maj,i / max(L_min,i, 1)), A_i ≥ 3","8","0","ratio"],
+["ret_elongation_sd","Elongation dispersion","Variability of thread-likeness across pieces","SD(L_maj,i / max(L_min,i, 1)), A_i ≥ 3","8","0","ratio"],
+["ret_mean_perimeter","Mean component perimeter","Average boundary length of a reticulin piece","mean(P_i), A_i ≥ 3","8","0","pixels"],
+["ret_cell_fraction","Reticulin fraction of haematopoietic compartment","Share of the cellular compartment occupied by fibres, independent of fat and bone content","N_ret / (N_ret + N_cell)","–","0","fraction"],
+["ret_lacunarity","Lacunarity","Heterogeneity (gappiness) of the reticulin distribution: 1 = uniform, larger = clustered","Var(m_b) / mean(m_b)² + 1, non-overlapping 16×16-pixel boxes b","–","1","dimensionless"],
+["ret_fractal_dim","Box-counting fractal dimension","Space-filling complexity of the fibre network (≈1 line-like, →2 area-filling)","slope of log N(s) vs log(1/s), s ∈ {2,4,8,16,32} pixels","–","0 (if <2 valid scales)","dimensionless"]
+]

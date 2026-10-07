@@ -1,0 +1,92 @@
+{
+  "source_records": 251,
+  "original_splits_patient_disjoint": true,
+  "test_selection": {
+    "strategy": "original_disjoint_test",
+    "actual_test_fraction": 0.199203187250996
+  },
+  "validation_selection": {
+    "balance_score": 0.07384328358208955,
+    "actual_holdout_fraction": 0.19900497512437812
+  },
+  "patient_sets_disjoint": true,
+  "subsets": {
+    "test": {
+      "n_images": 50,
+      "n_patients": 10,
+      "patients": [
+        "PGI_20",
+        "PGI_21",
+        "PGI_22",
+        "PGI_23",
+        "PGI_24",
+        "PGI_25",
+        "PGI_26",
+        "PGI_27",
+        "PGI_28",
+        "PGI_29"
+      ],
+      "grade_counts": {
+        "0": 20,
+        "1": 5,
+        "2": 17,
+        "3": 8
+      },
+      "hemorrhage_counts": {
+        "0": 50
+      }
+    },
+    "train": {
+      "n_images": 161,
+      "n_patients": 15,
+      "patients": [
+        "PGI_10",
+        "PGI_11",
+        "PGI_12",
+        "PGI_15",
+        "PGI_16",
+        "PGI_17",
+        "PGI_18",
+        "PGI_19",
+        "PGI_2",
+        "PGI_3",
+        "PGI_4",
+        "PGI_5",
+        "PGI_6",
+        "PGI_7",
+        "PGI_8"
+      ],
+      "grade_counts": {
+        "0": 31,
+        "1": 38,
+        "2": 62,
+        "3": 30
+      },
+      "hemorrhage_counts": {
+        "0": 115,
+        "1": 46
+      }
+    },
+    "val": {
+      "n_images": 40,
+      "n_patients": 4,
+      "patients": [
+        "PGI_1",
+        "PGI_13",
+        "PGI_14",
+        "PGI_9"
+      ],
+      "grade_counts": {
+        "0": 8,
+        "1": 9,
+        "2": 16,
+        "3": 7
+      },
+      "hemorrhage_counts": {
+        "0": 31,
+        "1": 9
+      }
+    }
+  },
+  "random_state": 20260812
+}
